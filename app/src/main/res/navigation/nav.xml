@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/firstFragment">
+
+    <activity
+        android:id="@+id/splashScreen"
+        android:name="com.example.a74.SplashScreen"
+        android:label="activity_splash_screen"
+        tools:layout="@layout/activity_splash_screen" />
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.a74.fragments.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            app:popUpTo="@id/bottomFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_firstFragment_to_bottomFragment"
+            app:destination="@id/bottomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomFragment"
+        android:name="com.example.a74.fragments.BottomFragment"
+        android:label="fragment_bottom"
+        tools:layout="@layout/fragment_bottom" >
+<!--        <action-->
+<!--            android:id="@+id/action_bottomFragment_to_peopleFragment"-->
+<!--            app:destination="@id/peopleFragment" />--> boldi shekilli bottom nav ishlami qoldi
+<!--        <action-->
+        chunmay qoldim qanday hozi, test qivotganda bottom navga qarab turing )
+<!--            android:id="@+id/action_bottomFragment_to_splashScreen"-->
+<!--            app:destination="@id/splashScreen" />-->birinchi kirganda bolyabdi holosa ha shuanqa
+        <action
+            app:popUpTo="@id/firstFragment"
+            app:popUpToInclusive="true"
+            android:id="@+id/action_bottomFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/groupsFragment"
+        android:name="com.example.a74.fragments.GroupsFragment"
+        android:label="fragment_groups"
+        tools:layout="@layout/fragment_groups" />
+    <fragment
+        android:id="@+id/peopleFragment"
+        android:name="com.example.a74.fragments.PeopleFragment"
+        android:label="fragment_people"
+        tools:layout="@layout/fragment_people" >
+        <action
+            android:id="@+id/action_peopleFragment_to_groupsFragment"
+            app:destination="@id/groupsFragment" />
+        <action
+            android:id="@+id/action_peopleFragment_to_sendMessageFragment"
+            app:destination="@id/sendMessageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sendMessageFragment"
+        android:name="com.example.a74.fragments.SendMessageFragment"
+        android:label="fragment_send_message"
+        tools:layout="@layout/fragment_send_message" />
+    <fragment
+        android:id="@+id/groupChatFragment"
+        android:name="com.example.a74.fragments.GroupChatFragment"
+        android:label="fragment_group_chat"
+        tools:layout="@layout/fragment_group_chat" />
+</navigation>
+
